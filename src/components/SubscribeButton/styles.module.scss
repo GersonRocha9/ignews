@@ -1,0 +1,21 @@
+.subscribeNowButton {
+  height: 3rem;
+  border-radius: 3rem;
+  background-color: var(--yellow-500);
+  border: 0;
+  padding: 2rem 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--black);
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  margin-top: 2rem;
+  font-size: 1.25rem;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}
