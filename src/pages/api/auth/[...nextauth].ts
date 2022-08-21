@@ -12,11 +12,17 @@ export default NextAuth({
   ],
 
   callbacks: {
-    async signIn(user) {
-      const { email } = user;
+    async signIn({ user }) {
+      const email = user.email;
 
       try {
-        await fauna.query(q.Create(q.Collection("users"), { data: { email } }));
+        await fauna.query(
+          q.Create(q.Collection("users"), {
+            data: {
+              email,
+            },
+          })
+        );
         return true;
       } catch {
         return false;
